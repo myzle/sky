@@ -1,1 +1,0 @@
-2018-07-31 18:30:35,278  sky.py  newman run /Users/myzle/PycharmProjects/sky/data/qb.json --globals /Users/myzle/PycharmProjects/sky/data/globals.json  --timeout-request 30000 --reporters cli,html --reporter-html-export /Users/myzle/PycharmProjects/sky/data/20180731183035.html >/Users/myzle/PycharmProjects/sky/data/20180731183035.txt
