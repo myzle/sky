@@ -1,0 +1,2415 @@
+{
+	"id": "fe24abe4-7241-419b-b0e7-32172e2cfe99",
+	"name": "DW",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"b7cff3b1-a72d-46f0-8430-03648d8b0f48",
+		"626604c4-2e29-4dae-bd2c-89432f39b59d",
+		"d750b282-1fa3-4f6d-a549-7c902effd52e",
+		"bbfbb21e-8230-4c18-81de-6c8f1e63a1cb",
+		"f1902295-2424-4573-b350-020204e88546",
+		"cfb1f025-099f-46bf-8a1f-94f2e92adda7",
+		"1fdb4284-6e50-4598-ac29-7f46ecc7c52d",
+		"bee541c6-d72f-4036-b513-8018ec20d983",
+		"0fb5bd36-e1fa-4864-a47f-f0756d05b66b",
+		"1ca8e383-4722-4241-8dce-82995aaf3fd5",
+		"d8784c0a-12f3-44d6-85d5-f0e801c2cb14",
+		"eba30842-4ad4-48af-b0a0-b8dc7b51a973",
+		"4d5afa28-a18a-4523-a295-1a77afc294a3",
+		"88f3a34a-f971-4f8e-8002-694b454a9c34",
+		"0a8ecb76-d9d9-40f4-8ba8-64976f3e5180",
+		"720f8bb6-f88a-484b-9f84-42a055856bad",
+		"6e0f8c8b-80b5-43ec-ac58-38c5df568543",
+		"0a709abc-7d17-46c5-b9b3-0f38df4aaa17",
+		"7c3c8a04-8137-434e-b0c7-6cff48a08b31",
+		"5d5caab7-f8a6-4282-a70c-4969bb11538f"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "0a709abc-7d17-46c5-b9b3-0f38df4aaa17",
+			"name": "删除电子围栏接口_0018",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/electricalFense/removeFence.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"id\":\"{{wl_id}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf9fe2b0-8239-45de-bd98-2929cc678849",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0a8ecb76-d9d9-40f4-8ba8-64976f3e5180",
+			"name": "个人定位分组信息_0015",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/personalInfo.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aacbdf78-dac0-4ac2-bdd1-79efdcb6f1b8",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0fb5bd36-e1fa-4864-a47f-f0756d05b66b",
+			"name": "获得员工定位管理信息接口_0009",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/syncM60EmployeeLocation.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2efd9f69-f5fd-4a56-83d2-6dc45fea1ba2",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "1ca8e383-4722-4241-8dce-82995aaf3fd5",
+			"name": "更新员工定位管理信息接口_0010",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/updateM60EmployeeLocation.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"state\":\"1\",\"type\":\"1\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b307cdc3-4b1f-4a50-98c4-63e3265b56c4",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "1fdb4284-6e50-4598-ac29-7f46ecc7c52d",
+			"name": "编辑定位人员接口_0007",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/editM60EmployeeLocationList.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"employeeCode\": \"{{empCode}}\",\"groupId\": \"-1\",\"fenceId\": \"-1\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b9369e7-8bcf-4df6-8b3c-e9e18e89be19",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "4d5afa28-a18a-4523-a295-1a77afc294a3",
+			"name": "删除定位分组接口_0013",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/removeLocationGroup.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"id\":\"{{lg_id}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b67bd31e-87db-4339-9608-56fc3b417def",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5d5caab7-f8a6-4282-a70c-4969bb11538f",
+			"name": "批量删除电子围栏接口_0020",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/electricalFense/batchRemoveFence.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"ids\":\"{{wl_id}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18a76b5f-820f-47e4-a603-096f614f9f56",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "626604c4-2e29-4dae-bd2c-89432f39b59d",
+			"name": "获取人员定位信息_0002",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/getEmployeeLocationInfo.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"employeeCode\":\"{{empCode}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8914d99a-fdb0-40fe-aa92-50e5363318e4",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "6e0f8c8b-80b5-43ec-ac58-38c5df568543",
+			"name": "编辑电子围栏接口_0017",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/electricalFense/editFense.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"id\":\"{{wl_id}}\",\"name\":\"电子围栏标题\",\"type\":\"1\",\"areaCoordinates\": [[123.1,234.5],[123.2,234.5],[123.3,234.5],[123.4,234.5]]}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d8b629ed-11ce-4bd1-a212-2ecec01a5af8",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "720f8bb6-f88a-484b-9f84-42a055856bad",
+			"name": "添加电子围栏接口_0016",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/electricalFense/addFense.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"name\":\"电子围栏标题\",\"type\":\"1\",\"areaCoordinates\": [[123.1,234.5],[123.2,234.5],[123.3,234.5],[123.4,234.5]]}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b43e92dd-027e-44d5-96de-e65979d85202",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");",
+							"",
+							"postman.setEnvironmentVariable(\"wl_id\", jsonData.data.id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "630023df-f9c2-4ef5-acef-bf2415797b01",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setEnvironmentVariable(\"location_p\", Math.round(Math.random()*999) + 0.1);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7c3c8a04-8137-434e-b0c7-6cff48a08b31",
+			"name": "同步电子围栏列表接口_0019",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/electricalFense/syncFenseList.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cbde27d-72b6-4594-a7d0-d1e3e3dc5e09",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "88f3a34a-f971-4f8e-8002-694b454a9c34",
+			"name": "同步定位分组列表接口_0014",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/syncLocationGroupList.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21c1aa6e-77b6-49f3-8388-150f95514a78",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b7cff3b1-a72d-46f0-8430-03648d8b0f48",
+			"name": "登录_0001",
+			"url": "{{host}}/{{service}}/rcm/common/user/login.do",
+			"description": "0310",
+			"data": [
+				{
+					"key": "userStr",
+					"type": "text",
+					"value": "{\"telPhone\":\"{{leadertelPhone}}\",\"password\":\"{{leaderpassword}}\"}"
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip"
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID"
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus"
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq"
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN"
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c93e3b10-ea00-4724-a7d1-ff1a4e1481aa",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");",
+							"",
+							"//抽取变量",
+							"postman.setEnvironmentVariable(\"sessionId\", jsonData.data.sessionId);",
+							"postman.setEnvironmentVariable(\"entCode\", jsonData.data.entCode);",
+							"postman.setEnvironmentVariable(\"account\", jsonData.data.account);",
+							"postman.setEnvironmentVariable(\"imLoginId\", jsonData.data.imLoginId);",
+							"postman.setEnvironmentVariable(\"leadEmpCode\", jsonData.data.empCode);",
+							"postman.setEnvironmentVariable(\"uid\", jsonData.data.uid);",
+							"postman.setEnvironmentVariable(\"lastUpdateTime\", jsonData.lastUpdateTime);",
+							"postman.setEnvironmentVariable(\"empCode\", jsonData.data.empCode);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "11fa8967-4c90-420e-99a4-3df9d3341370",
+						"type": "text/javascript",
+						"exec": [
+							"//postman.setEnvironmentVariable(\"telPhone\", \"15811111111\");",
+							"//postman.setEnvironmentVariable(\"password\", \"a12345\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\nContent-Type: application/x-www-form-urlencoded\nmobilemodel: OnePlus\ntid: m99000736119629ofq\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "bbfbb21e-8230-4c18-81de-6c8f1e63a1cb",
+			"name": "PC端编辑定位人员接口_0004",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/editM60EmployeeLocationListForPC.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"employeeCode\": [{\"code\":\"{{employeeCode1}}\", \"name\":\"{{employeeName1}}\"},{\"code\":\"{{employeeCode2}}\", \"name\":\"{{employeeName2}}\"}],\"groupId\": \"\",\"fenceId\": \"{{fence_id}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d957ef84-156b-4ab5-a3e0-51203ff2b2cc",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "bee541c6-d72f-4036-b513-8018ec20d983",
+			"name": "判断是否绑定定位分组和电子围栏接口_0008",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/checkBindedGroupsAndFences.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"employeeCodes\":[\"2324\",\"3421\",\"3234\",\"3458\"]}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cac1303a-ee86-4921-86b7-12e0c89745ff",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cfb1f025-099f-46bf-8a1f-94f2e92adda7",
+			"name": "获取人员定位信息_0006",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/getEmployeeLocationInfo.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"employeeCode\":\"{{empCode}}\"}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cac81071-bede-43f0-b152-4986920babff",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d750b282-1fa3-4f6d-a549-7c902effd52e",
+			"name": "获取人员定位分组和围栏信息_0003",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/getLocationInfoForPC.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"deptCode\":\"\",\"groupId\":\"\",\"fenceId\":\"\",\"pageSize\":15,\"pageIndex\":1}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c001f8a0-cc7d-4b40-83f1-d87453aff9cc",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");",
+							"",
+							"postman.setEnvironmentVariable(\"employeeCode1\", jsonData.data.employeeCodes[0].employeeCode);",
+							"postman.setEnvironmentVariable(\"employeeCode2\", jsonData.data.employeeCodes[1].employeeCode);",
+							"postman.setEnvironmentVariable(\"employeeName1\", jsonData.data.employeeCodes[0].employeeName);",
+							"postman.setEnvironmentVariable(\"employeeName2\", jsonData.data.employeeCodes[1].employeeName);",
+							"postman.setEnvironmentVariable(\"fence_id\", jsonData.data.fences[0].id);",
+							"//postman.setEnvironmentVariable(\"group_id\", jsonData.data.groups[0].id);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d8784c0a-12f3-44d6-85d5-f0e801c2cb14",
+			"name": "添加定位分组接口_0011",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/addLocationGroup.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"name\":\"销售顾问轨迹位置\",\"members\":[{'name':'{{employeeName1}}','employeeCode':'{{employeeCode1}}'},{'name':'{{employeeName2}}','employeeCode':'{{employeeCode2}}'}],\"days\":\"1,2,3,5\",\"begin\":\"09:00\",\"end\":\"17:00\",\"samplingFrequency\":15}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8ee65ba-ea3c-44ae-9a0f-5a20634d228a",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");",
+							"",
+							"postman.setEnvironmentVariable(\"lg_id\", jsonData.data.id);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "eba30842-4ad4-48af-b0a0-b8dc7b51a973",
+			"name": "编辑定位分组接口_0012",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/editLocationGroup.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{\"id\":\"{{lg_id}}\",\"samplingFrequency\":15}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2946be29-1ea7-423f-9626-843c0800c792",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f1902295-2424-4573-b350-020204e88546",
+			"name": "获取部门下子部门定位信息和直接下属定位信息_0005",
+			"url": "{{host}}/{{service}}/rcm/e/{{entCode}}/employeeLocation/getDeptLocationInfo.do",
+			"description": "",
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "accept-encoding",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "clienttype",
+					"value": "ANDROID",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "connection",
+					"value": "Keep-Alive",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "content-type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entcode",
+					"value": "{{entCode}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "loginid",
+					"value": "{{account}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "mobilemodel",
+					"value": "OnePlus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sessionid",
+					"value": "{{sessionId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tid",
+					"value": "m99000736119629ofq",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "uid",
+					"value": "{{imLoginId}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-locale",
+					"value": "zh_CN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "version",
+					"value": "6.2.4.006",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc924589-8cc1-4eba-a73e-8fcf56bf81ce",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.result, \"0\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "accept-encoding: gzip\nclienttype: ANDROID\nconnection: Keep-Alive\ncontent-type: application/x-www-form-urlencoded\nentcode: {{entCode}}\nloginid: {{account}}\nmobilemodel: OnePlus\nsessionid: {{sessionId}}\ntid: m99000736119629ofq\nuid: {{imLoginId}}\nuser-locale: zh_CN\nversion: 6.2.4.006\n",
+			"pathVariables": {}
+		}
+	]
+}

@@ -1,0 +1,393 @@
+{
+  "id": "72cb5000-13d4-477f-8a6a-83f765a0e28e",
+  "values": [
+    {
+      "key": "logParams",
+      "value": "tests[`Request parameter：${decodeURIComponent (JSON.stringify(request.data))}`]=true;",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getResponseJson",
+      "value": "tests[`Response body: ${responseBody}`] = true;",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "assertContain",
+      "value": "var assertContain=(value)=>{var result;if(responseBody.has(value)){result=\"Pass\";} else{ result=\"Failed\";}tests[`Result:${result} response期待包含的数据为：${value}`]=responseBody.has(value);};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "assertNotContain",
+      "value": "var assertNotContain=(value)=>{var result;if(!responseBody.has(value)){result=\"Pass\";} else{ result=\"Failed\";}tests[`Result:${result} response期待不包含的数据为：${value}`]=!responseBody.has(value);};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "assertEqual",
+      "value": "var assertEqual=(name,actual,expected)=>{var result;if(actual===expected){result=\"Pass\";} else{ result=\"Failed\";} tests[`Result:${result} ${name}期待值：${expected}（实际值：${actual}）`]=actual===expected;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "assertStatus",
+      "value": "var assertStatus=(actual,expected)=>{var result;if(actual===expected){result=\"Pass\";} else{ result=\"Failed\";} tests[`Result:${result} status期待值：${expected}（实际值：${actual}）`]=actual===expected;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "addDate",
+      "value": "var addDate=(day)=>{var a = new Date();a = a.valueOf();a = a + day * 24 * 60 * 60 * 1000;a = new Date(a);return a;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "dateFormat",
+      "value": "Date.prototype.Format=function(fmt){var o = {\"M+\": this.getMonth() + 1,\"d+\": this.getDate(),\"h+\": this.getHours(),\"m+\": this.getMinutes(), \"s+\": this.getSeconds(), \"q+\": Math.floor((this.getMonth() + 3) / 3), \"S\": this.getMilliseconds()};if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + \"\").substr(4 - RegExp.$1.length));for (var k in o)if (new RegExp(\"(\" + k + \")\").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((\"00\" + o[k]).substr((\"\" + o[k]).length)));return fmt;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getZeroTimestamp",
+      "value": "var getZeroTimestamp=(day)=>{return new Date(addDate(day).toLocaleDateString()).getTime();};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getZeroTimestamp_new",
+      "value": "var getZeroTimestamp_new=(day)=>{var dd = addDate(day);var y = dd.getFullYear();var m = dd.getMonth();var d = dd.getDate();var ddd = new Date(y,m,d);return ddd.getTime();};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getTimestamp",
+      "value": "var getTimestamp=()=>{return new Date().getTime();};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getFormatDate",
+      "value": "var getFormatDate=()=>{var date = new Date();var seperator1 = \"-\";var year = date.getFullYear();var month = date.getMonth() + 1;var strDate = date.getDate();if (month >= 1 && month <= 9) {month = \"0\" + month;}if (strDate >= 0 && strDate <= 9) {strDate = \"0\" + strDate;}var currentdate = year + seperator1 + month + seperator1 + strDate;return currentdate;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getFormatDate1",
+      "value": "var getFormatDate1=(n)=>{var date = new Date();var seperator1 = \"-\";var year = date.getFullYear();var month = date.getMonth() + 1;var strDate = date.getDate()+n;if (strDate == 32 || strDate == 30 || strDate == 31) {strDate = \"1\";if(month != 12){month = month +1;}else{month = 1;year = year +1}}if (month >= 1 && month <= 9) {month = \"0\" + month;}if (strDate >= 0 && strDate <= 9) {strDate = \"0\" + strDate;}var currentdate = year + seperator1 + month + seperator1 + strDate;return currentdate;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "getFormatMonth",
+      "value": "var getFormatMonth=()=>{var date = new Date();var seperator1 = \"-\";var year = date.getFullYear();var month = date.getMonth() + 1;var currentmonth = year + seperator1 + month;return currentmonth;};",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "host",
+      "value": "https://mm.hecom.cn",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "hostPC",
+      "value": "https://mm.hecom.cn",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "service",
+      "value": "mobile-0.0.1-SNAPSHOT",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "telPhone",
+      "value": "17900070019",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "password",
+      "value": "34f85ca80ec353d3052b8a2d3973a0c5",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "leadertelPhone",
+      "value": "17900070019",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "leaderpassword",
+      "value": "34f85ca80ec353d3052b8a2d3973a0c5",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "sessionId",
+      "value": "hecomrcm123456",
+      "enabled": false,
+      "type": "text"
+    },
+    {
+      "key": "6072",
+      "value": "{{host}}/{{service}}/crm/contract/v2/receipts/listByCustomer.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0001",
+      "value": "{{host}}/{{service}}/rcm/common/user/login.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0002",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/list4mobile.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0003",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/promotion/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0004",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/order/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0005",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/order/return/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0006",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryWarehouseInventoryByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0007",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryTransferRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0008",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryInventoryInventoryRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0009",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/storageRecordPagedFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0010",
+      "value": "{{hostPC}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/save.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0011",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/model/search.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0012",
+      "value": "{{hostPC}}/{{service}}/rcm/e/{{entCode}}/psi/order/add.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0013",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/order/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0014",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/promotion/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0015",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryWarehouseInventoryByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0016",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/customer2/selectCustomerListByPage.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0017",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/child.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0018",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/cart/commodity/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0019",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}//psi/commodity/recentByCustomer.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0020",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/listByCustomer.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0021",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/order/return/detail.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0022",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}//psi/order/return/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0023",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/searchWarehouseInventory.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0024",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/storageRecordPagedFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0025",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/inStorageRecordDetail.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0026",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/commodity/model/list4mobile.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0027",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/outStorageRecordDetail.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0028",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryTransferRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0029",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/transferDetail.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0030",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryInventoryInventoryRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0031",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryInventoryInventoryRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0032",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryInventoryInventoryRecordsByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0033",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/storageRecordPagedFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "0034",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/inventory/queryCommodityCostByFilter.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "1006",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/promotion/detail.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "1007",
+      "value": "{{host}}/{{service}}/rcm/e/{{entCode}}/psi/order/return/list.do",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "barCode",
+      "value": "1000000007062",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "test",
+      "value": "http://precrm.hecom.cn",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "noticePhone",
+      "value": "17710636792",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "wareHouseId",
+      "value": "28601",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "purchaseId",
+      "value": "230005",
+      "enabled": true,
+      "type": "text"
+    }
+  ],
+  "name": "My Workspace Globals",
+  "_postman_variable_scope": "globals",
+  "_postman_exported_at": "2018-06-07T12:31:44.969Z",
+  "_postman_exported_using": "Postman/6.0.9"
+}

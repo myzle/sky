@@ -1,0 +1,1154 @@
+{
+	"id": "01f15901-c05c-4620-be42-2bb3b6de820e",
+	"name": "QB",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"0da2e962-ed15-451d-bf03-e1edce72b5af",
+		"2006fadf-6617-4710-b4ac-f972535788e2",
+		"b4e8214e-18a7-4cab-96ef-cdb7097f3ec0",
+		"b43df9aa-8e1f-4e42-b965-3fc3a29f112d",
+		"114b2fa2-b3fa-47d4-93a3-419cc2608158",
+		"9394aaf5-d21c-4463-90cd-2720b0b42a41",
+		"9f968491-3efd-43a1-9672-8b33bdb10cf6",
+		"fad0be88-6807-43d8-93de-a7bfadf43af1",
+		"bc3194e7-e8f1-4fd1-97ed-dd49f6157644",
+		"fe854dfd-3e5e-4c8d-b4d9-ae3294618183",
+		"59f3fb81-e9dc-4bd9-9ff8-fa75cde731d8",
+		"afa6ef05-ecb6-415b-bb18-8571aaf28af9",
+		"f15f415f-37fd-499a-9984-74e341c072bd",
+		"5e64f36f-2573-4fe1-8934-9c77809ef4d7",
+		"a49fc5d1-7d9d-4411-ad72-50d6d243a176",
+		"7e8e610a-82e7-469e-b25e-8bd6a2f86ad0",
+		"bce32606-87c1-45d4-a1a8-9865118150b3",
+		"c4ddddca-208c-43f2-8e12-197475b5acc5",
+		"3010322d-8c6e-408a-beaa-8b9a1a6672c8",
+		"03c8f1b3-7d51-4cd7-989e-ce120bacc21a"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "03c8f1b3-7d51-4cd7-989e-ce120bacc21a",
+			"name": "搜索token列表_0020",
+			"url": "http://testapp.dbank.net/wallet_a/coin/search",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "keyword",
+					"value": "B",
+					"sessionValue": "B",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "0da2e962-ed15-451d-bf03-e1edce72b5af",
+			"name": "用户地址注册，获取新token_0001",
+			"url": "http://testapp.dbank.net/wallet_a/user/pubaddress/register",
+			"description": "0310",
+			"data": [
+				{
+					"key": "coin_pubAddressList",
+					"value": "ETH_0x4fABa42CE2114E31573d00a7F814bbe482469b7a,BTC_mr3NJXz6xBfXpFJHmhkjVRqA5puP3djSdD,BTN_n4oSpc3gizpjasykqnfoWTCPTjpDPW5LGL,QTUM_qfqErkqr8YXju6FjFVCDBoGDs2LjtpZroc,BCH_n3PxQC2NMeQX2tGcRzXLz6RXBXYPt8srdf",
+					"sessionValue": "ETH_0x4fABa42CE2114E31573d00a7F814bbe482469b7a,BTC_mr3NJXz6xBfXpFJHmhkjVRqA5puP3djSdD,BTN_n4oSpc3gizpjasykqnfoWTCPTjpDPW5LGL,QTUM_qfqErkqr8YXju6FjFVCDBoGDs2LjtpZroc,BCH_n3PxQC2NMeQX2tGcRzXLz6RXBXYPt8srdf",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "",
+					"sessionValue": null,
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d48d351b-e560-4a7d-bb59-859060b09b77",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);",
+							"",
+							"//抽取变量",
+							"postman.setEnvironmentVariable(\"token\", jsonData.data.token);",
+							"postman.setEnvironmentVariable(\"u\", jsonData.input.u);",
+							"//postman.setEnvironmentVariable(\"sessionId\", jsonData.data.sessionId);",
+							"//postman.setEnvironmentVariable(\"entCode\", jsonData.data.entCode);",
+							"//postman.setEnvironmentVariable(\"account\", jsonData.data.account);",
+							"//postman.setEnvironmentVariable(\"imLoginId\", jsonData.data.imLoginId);",
+							"//postman.setEnvironmentVariable(\"leadEmpCode\", jsonData.data.empCode);",
+							"//postman.setEnvironmentVariable(\"uid\", jsonData.data.uid);",
+							"//postman.setEnvironmentVariable(\"lastUpdateTime\", jsonData.lastUpdateTime);",
+							"//postman.setEnvironmentVariable(\"empCode\", jsonData.data.empCode);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "11fa8967-4c90-420e-99a4-3df9d3341370",
+						"type": "text/javascript",
+						"exec": [
+							"//postman.setEnvironmentVariable(\"telPhone\", \"15811111111\");",
+							"//postman.setEnvironmentVariable(\"password\", \"a12345\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "114b2fa2-b3fa-47d4-93a3-419cc2608158",
+			"name": "交易详情_0005",
+			"url": "http://testapp.dbank.net/wallet_a/transaction/details",
+			"description": null,
+			"data": [
+				{
+					"key": "transactionHash",
+					"value": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"sessionValue": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "2006fadf-6617-4710-b4ac-f972535788e2",
+			"name": "创建交易_0002",
+			"url": "http://testapp.dbank.net/wallet_a/transaction/create",
+			"description": null,
+			"data": [
+				{
+					"key": "pubAddress",
+					"value": "fd7c1f374d5bac3fe1644069a877b0e2",
+					"sessionValue": "n4oSpc3gizpjasykqnfoWTCPTjpDPW5LGL",
+					"description": "n4oSpc3gizpjasykqnfoWTCPTjpDPW5LGL",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "amount",
+					"value": "1",
+					"sessionValue": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "autoCommission",
+					"value": "1",
+					"sessionValue": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "commission",
+					"value": "",
+					"sessionValue": "0.0001",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "3010322d-8c6e-408a-beaa-8b9a1a6672c8",
+			"name": "获取cms配置内容接口_0019",
+			"url": "http://testapp.dbank.net/wallet_a/cms/getcmslist",
+			"description": null,
+			"data": [
+				{
+					"key": "key_list",
+					"value": "banner_candy,wallet_download",
+					"sessionValue": "banner_candy,wallet_download",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "59f3fb81-e9dc-4bd9-9ff8-fa75cde731d8",
+			"name": "一个游戏_0011",
+			"url": "http://testapp.dbank.net/wallet_a/activity/onegame",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": null,
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"sessionValue": null,
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5e64f36f-2573-4fe1-8934-9c77809ef4d7",
+			"name": "币种列表_0014",
+			"url": "http://testapp.dbank.net/wallet_a/coin/list/v1_1",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "7e8e610a-82e7-469e-b25e-8bd6a2f86ad0",
+			"name": "币种删除自选_0016",
+			"url": "http://testapp.dbank.net/wallet_a/coin/optional/remove",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "coin_code",
+					"value": "BTN",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "9394aaf5-d21c-4463-90cd-2720b0b42a41",
+			"name": "余额查询_0006",
+			"url": "http://testapp.dbank.net/wallet_a/user/balance",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "currency",
+					"value": "usd",
+					"sessionValue": "usd",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "9f968491-3efd-43a1-9672-8b33bdb10cf6",
+			"name": "初始化控制_0007",
+			"url": "http://testapp.dbank.net/wallet_a/main/ctrl",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "a49fc5d1-7d9d-4411-ad72-50d6d243a176",
+			"name": "币种添加自选_0015",
+			"url": "http://testapp.dbank.net/wallet_a/coin/optional/add",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin_code",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "afa6ef05-ecb6-415b-bb18-8571aaf28af9",
+			"name": "秘钥约定接口_0012",
+			"url": "http://testapp.dbank.net/wallet_a/main/oops",
+			"description": null,
+			"data": [
+				{
+					"key": "u",
+					"value": "{{u}}",
+					"sessionValue": "{{u}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "b43df9aa-8e1f-4e42-b965-3fc3a29f112d",
+			"name": "交易记录_0004",
+			"url": "http://testapp.dbank.net/wallet_a/transaction/loglist",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b4e8214e-18a7-4cab-96ef-cdb7097f3ec0",
+			"name": "正式发送签名后的交易_0003",
+			"url": "http://testapp.dbank.net/wallet_a/transaction/publish",
+			"description": null,
+			"data": [
+				{
+					"key": "unsigned_tx_id",
+					"value": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"sessionValue": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "transactionSign",
+					"value": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"sessionValue": "5ee7c4b33e7c00f39738bf07ae3b8fcedc732a189f52aaf5cbb494ae9c3c0f68",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "bc3194e7-e8f1-4fd1-97ed-dd49f6157644",
+			"name": "我的页面_0009",
+			"url": "http://testapp.dbank.net/wallet_a/main/mypage",
+			"description": null,
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "bce32606-87c1-45d4-a1a8-9865118150b3",
+			"name": "币种重设自选_0017",
+			"url": "http://testapp.dbank.net/wallet_a/coin/optional/resort",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin_code_list",
+					"value": "BTC,BTN",
+					"sessionValue": "BTC,BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "c4ddddca-208c-43f2-8e12-197475b5acc5",
+			"name": "发现页_0018",
+			"url": "http://testapp.dbank.net/wallet_a/cms/getdiscover",
+			"description": null,
+			"data": [
+				{
+					"key": "userStr",
+					"value": "{}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "f15f415f-37fd-499a-9984-74e341c072bd",
+			"name": "获取语言配置接口_0013",
+			"url": "http://testapp.dbank.net/wallet_a/cms/getlanglist",
+			"description": null,
+			"data": [
+				{
+					"key": "key_list",
+					"value": "publish_tx_fail",
+					"sessionValue": "publish_tx_fail",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "fad0be88-6807-43d8-93de-a7bfadf43af1",
+			"name": "首页_0008",
+			"url": "http://testapp.dbank.net/wallet_a/main/index/v1_1",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "currency",
+					"value": "usd",
+					"sessionValue": "usd",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "fe854dfd-3e5e-4c8d-b4d9-ae3294618183",
+			"name": "转账页面预加载信息_0010",
+			"url": "http://testapp.dbank.net/wallet_a/transaction/pre",
+			"description": null,
+			"data": [
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"sessionValue": "{{token}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "coin",
+					"value": "BTN",
+					"sessionValue": "BTN",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "815fb1bd-56cf-47d0-9fb1-08139f9958ba",
+						"type": "text/javascript",
+						"exec": [
+							"//初始化方法",
+							"eval(globals.logParams);",
+							"eval(globals.getResponseJson);",
+							"eval(globals.assertContain);",
+							"eval(globals.assertStatus);",
+							"eval(globals.assertEqual);",
+							"",
+							"//断言",
+							"var jsonData = JSON.parse(responseBody);",
+							"assertStatus(responseCode.code,200)",
+							"assertEqual('result', jsonData.errno, 0);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
