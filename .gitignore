@@ -103,6 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 .h
+
+# other
 .html
 .txt
 .xml
