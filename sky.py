@@ -268,6 +268,7 @@ def read_newman_console_result(case_list, name, filename, communication_dict, re
     report_path = os.path.join(os.path.expanduser('~'), 'Desktop', 'sky')
     if not os.path.exists(report_path):
         os.mkdir(report_path)
+    print(apiid_apiinfo_oderdict)
     create_api_report(apiid_apiinfo_oderdict, report_path, communication_dict, name, receive_group_id, status)
     return contents_sms
 
